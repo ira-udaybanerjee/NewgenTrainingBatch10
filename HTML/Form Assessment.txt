@@ -1,0 +1,21 @@
+CREATE A TAX ASSESSMENT FORM WITH THE FOLLOWING FIELDS
+
+Resident Name
+
+Father or Husband Name
+
+Ward No (To be selected out of 1 to 10)
+
+Water Line (Yes / No)
+
+Sewer Line (Yes / No)
+
+Road Width (To be selected out of >24m, 12-24m, <12m)
+
+Covered Area
+
+Area Incharge (To be selected out of Amit, Anshul, Vinod, Akshay, Dev)
+
+Additional Comments
+
+Submit Button
