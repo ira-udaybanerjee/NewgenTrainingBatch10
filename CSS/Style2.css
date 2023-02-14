@@ -1,0 +1,61 @@
+body
+{
+  background-color:lightyellow;
+}
+
+
+table
+{ 
+  background-color:white;
+  border-top-style:solid;
+  border-bottom-style:solid;
+  border-left-style:dotted;
+  border-right-style:dotted;
+  border-color:brown;
+  border-width:2;
+  font-family:verdana, arial, serif, tahoma;
+  font-size:20;
+  margin-top:50px;
+  margin-bottom:50px;
+  margin-right:50px;
+  margin-left:250px;
+  padding:50px;
+  box-shadow:2px 5px 10px grey;
+}
+
+input[type=text], input[type=password] 
+{
+  border: 2px solid red;
+  border-radius: 4px;
+  font-family:Verdana;
+  font-size:14;
+  height:40px;
+  width:300px;
+}
+
+textarea {
+  /*width: 300px;
+  height: 150px;*/
+  border: 2px solid black;
+  border-radius: 4px;
+  background-color: white;
+  resize: none;
+}
+
+input[type=submit]
+{
+  border-radius:20px;
+  background-color: grey;
+  border: none;
+  color: black;
+  padding: 16px;
+  text-decoration: underline;
+  margin: 4px 2px;  
+  font-family:Verdana;
+  font-weight:bold;
+}
+
+#gender{
+width:300px;
+border-radius:10px;
+}
