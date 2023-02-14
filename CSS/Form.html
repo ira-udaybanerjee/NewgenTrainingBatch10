@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <title>Registration Form</title>      
+      <link rel="stylesheet" href="Style2.css"/>     
+      <link rel="stylesheet" href="Style.css"/>
+    
+  </head>
+  <body>
+    
+     <div>
+         <form action="04_SuccessPage.html">
+             <table>
+                <tr>
+                  <td><b>First Name:</b> </td> <td> <input type="text" id="txtfirstname"/> </td>
+                </tr>
+                <tr>
+                  <td><b>Last Name:</b> </td> <td> <input type="text" id="txtlastname"/> </td>
+                </tr>
+                <tr>
+                  <td><b>E Mail:</b> </td> <td> <input type="text" id="txtemail"/> </td>
+                </tr>
+
+           
+              
+                <tr>
+                  <td><b>Gender:</b> </td> 
+                  <td>
+
+                     <fieldset id="gender">
+
+                       <input type="radio" id="radmale" value="Male" name="gender"/>
+                       <label for = "radmale">Male</label> <br/>
+
+                       <input type="radio" id="radfemale" value="Female" name="gender"/>
+                       <label for = "radfemale">Female</label> <br/>
+
+                       <input type="radio" id="radtg" value="TG" name="gender"/>
+                       <label for = "radtg">Third Gender</label>
+
+                     </fieldset>
+
+                  </td>
+
+                </tr>
+                <tr>
+                  <td><b>Occupation:</b> </td> 
+                  <td> 
+                      <select id="Occupation"> 
+                         <option value="Private Employee">Private Employee</option>
+                         <option value="Government Employee">Government Employee</option>
+                         <option value="Self Employed">Self Employed</option>
+                         <option value="Professional">Professional</option>
+                      </select>
+                  </td>
+                </tr>
+                <tr>
+                   <td><b>Phone No:</b> </td> <td> <input type="text" id="txtphone"/> </td>
+                </tr>
+                <tr>
+                   <td><b>User Name:</b> </td> <td> <input type="text" id="txtusername"/> </td>
+                </tr>
+                <tr>
+                   <td><b>Password:</b> </td> <td> <input type="password" id="pass"/> </td>
+                </tr>
+                <tr>
+                   <td><b>Confirm Password:</b> </td> <td> <input type="password" id="confpass"/> </td>
+                </tr>
+                <tr>
+                   <td><b>Location:</b> </td> <td> <input type="text" id="txtlocation"/> </td>
+                </tr>
+                <tr>
+                   <td><b>Feedback:</b> </td>  <td> <textarea id="txtfeedback" rows="5" cols="30"> </textarea> </td>
+                </tr>
+                <tr align="right">
+                   <td colspan="2"><input type="Submit" value="Submit"/></td>
+                </tr>
+             </table>
+         </form>
+       
+     </div>
+     <hr/>
+     <div>
+     
+     </div>
+  </body>
+</html>
