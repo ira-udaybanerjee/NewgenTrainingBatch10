@@ -1,0 +1,25 @@
+Q1. Create an array with 10 text values.
+
+Q2. Print the array inside a paragraph with every element of array being displayed in the next line. Example
+
+Uday
+Aditi
+Ira
+Preeti
+Saroj
+
+Q3. In the above array
+Display style should be as under:
+1st Value Regular
+2nd Value Italic
+3rd Value Bold
+.....
+4th Value Regular
+5th Value Italic
+6th Value Bold
+....
+
+Create a new program
+
+Q4. Accept 5 numbers from the user and display the sum (Use an array to store the numbers).
+
