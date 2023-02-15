@@ -1,0 +1,25 @@
+<html>
+   <body>
+      <p id="result">
+
+      </p>
+   </body>
+   <script>
+        var num1=prompt("Please enter the first number");
+        var num2=prompt("Please enter the second number");
+       
+        if(Number(num1) > Number(num2))
+        {        
+          document.getElementById("result").innerHTML = num1 + " is greater ";
+        }
+        else if(Number(num2) > Number(num1))
+        {
+          document.getElementById("result").innerHTML = num2 + " is greater ";
+        }
+        else
+        {         
+           document.getElementById("result").innerHTML = "Both are equal";
+        }
+      
+   </script>
+</html>

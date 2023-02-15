@@ -1,0 +1,68 @@
+<html>
+  <head>
+     <title>Java Script Demo</title>     
+  </head>
+  <body style="font-family:Tahoma">         
+      
+ 
+  </body>
+  <script type="text/javascript">  
+     var fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+     document.write(fruits.join("-"));
+     document.write("<br/>");
+
+    
+     fruits.pop();
+     document.write("<br/><u>After Pop</u>");
+     document.write("<br>");
+     document.write(fruits);
+     document.write("<br/>");
+
+   
+     fruits.push("Kiwi");
+     document.write("<br/><u>After Push</u>");
+     document.write("<br/>");
+     document.write(fruits);
+     document.write("<br/>");
+     
+   
+     fruits.shift();
+     document.write("<br/><u>After Shift</u>");
+     document.write("<br/>");
+     document.write(fruits);
+     document.write("<br/>");
+ 
+    
+     fruits.unshift("Lemon");
+     document.write("<br/><u>After Unshift</u>");
+     document.write("<br/>");
+     document.write(fruits);
+     document.write("<br/>");
+
+     
+     document.write("<br/><u>Array Length</u>");
+     document.write("<br/>");
+     document.write(fruits.length);
+     document.write("<br/>");
+     
+     document.write("<br/><u>Sorted Array</u>");
+     document.write("<br/>");
+     fruits.sort();
+     document.write(fruits);
+     document.write("<br/>");
+
+     var summerfruits = ["Mango","Litchi","Watermelon"];
+     var winterfruits = ["Apple","Grapes"];
+
+     var allfruits = summerfruits.concat(winterfruits);
+     document.write("<br/><u>Concatenated Array</u>");
+     document.write("<br>");
+     document.write(allfruits);
+     document.write("<br/>");
+     
+
+     
+             
+  </script>
+</html>

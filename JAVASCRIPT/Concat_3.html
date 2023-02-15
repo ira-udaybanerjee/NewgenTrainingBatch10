@@ -1,0 +1,32 @@
+<html>
+
+    <head>
+
+    </head>
+
+    <body>
+       <p id="p1">
+          The <b>sum</b> of the two values is: 
+       </p>
+       
+       <p id="p2">
+          The <b>concat</b> of the two values is: 
+       </p>
+    </body>
+
+    <script>
+       var a = prompt('Please enter the first value');
+
+       var b = prompt('Please enter the second value');
+
+       var c = Number(a) + Number(b);
+
+       var d = a + b
+       
+       document.getElementById("p1").innerHTML += "<B>" + c +"</B>";
+
+       document.getElementById("p2").innerHTML += "<B>" + d +"</B>";
+
+    </script>
+
+</html>

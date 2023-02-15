@@ -1,0 +1,38 @@
+<html>
+   <head>
+   
+   </head>
+   <body>
+      
+      <p id = "msg1">
+         
+      </p>
+      <p id = "msg2">
+        
+      </p>
+   </body>
+   <script type="text/javascript">
+           var i = "2";
+
+           var num = prompt("Please enter a number ");
+
+           if(num == i)
+           {
+              document.getElementById("msg1").innerHTML = "<BR/><B> The values are equal </B>";
+           }
+           else
+           {
+              document.getElementById("msg1").innerHTML = "<BR/><B> The values are not equal </B>";
+           }
+           
+           //Checking exact equal
+           if(num === i)
+           {
+               document.getElementById("msg2").innerHTML = "<BR/> <B> The values are exactly equal </B>";
+           }
+           else
+           {
+               document.getElementById("msg2").innerHTML = "<BR/> <B> The values are not exactly equal </B>";
+           }
+   </script>  
+</html>

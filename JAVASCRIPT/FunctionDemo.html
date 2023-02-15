@@ -1,0 +1,24 @@
+<html>
+   <head>
+      
+   </head>
+   <body>
+       
+   </body>
+   <script type="text/javascript">
+
+        function generateTable(num, till)
+        {
+           for(var i = 1; i <= till; i++)
+           {
+              product = num * i;
+              document.write(num + " X " + i + " = " + product + "<br/>");
+           }
+        }      
+
+        var number = prompt("Please enter a number ");
+
+        generateTable(number, 30);
+
+   </script>
+</html>

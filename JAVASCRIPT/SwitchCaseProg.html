@@ -1,0 +1,65 @@
+<html>
+    <head>
+    
+    </head>
+    <body>
+    
+    </body>
+    <script type="text/javascript">
+          
+            document.write("Entering switch block<br />");
+
+            /*
+                  if(grade=="A")
+                  {
+                         
+                   }
+                   else if(grade=="B")
+                   {
+                    
+                   }
+                   else if(grade=="C")
+                   {
+
+                    }
+                   else
+                    {
+
+                    }
+                                     
+
+            */
+
+
+            var grade = prompt('Please enter a grade');
+
+            switch (grade) 
+            {
+               case 'A': 
+               document.write("Good job<br />");
+               break;
+
+               case 'B': 
+               document.write("Pretty good<br />");
+               break;
+
+               case 'C':
+               document.write("Passed<br />");
+               break;
+
+               case 'D':
+               document.write("Not so good<br />");
+               break;
+
+               case 'F': 
+               document.write("Failed<br />");
+               break;
+
+               default:
+               document.write("Unknown grade<br />");
+               break;
+            }
+
+            document.write("Exiting switch block");
+    </script>
+</html>

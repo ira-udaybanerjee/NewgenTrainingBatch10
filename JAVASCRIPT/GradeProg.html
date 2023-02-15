@@ -1,0 +1,44 @@
+<html>
+   <head>
+   
+   </head>
+   <body>
+
+   </body>
+   <script type="text/javascript">
+
+         var percentmarks = prompt("Please enter the percentage obtained");
+         var grade = "";
+
+         if(percentmarks >= 90 && percentmarks<=100)
+         {
+            grade="A+";
+         }
+         else if(percentmarks >= 75 && percentmarks <90)
+         {
+            grade="A";
+         }
+         else if(percentmarks >= 60 && percentmarks < 75)
+         {
+            grade="B";
+         }
+         else if(percentmarks >= 50 && percentmarks < 60)
+         {
+            grade="C";
+         }
+         else if(percentmarks >= 33 && percentmarks < 50)
+         {
+            grade="D";
+         }
+         else if(percentmarks > 100 || percentmarks < 0)
+         {
+            grade ="Invalid";
+         }
+         else
+         {
+             grade="Failed";
+         }
+
+         document.write("You have got " + grade);
+   </script>  
+</html>
