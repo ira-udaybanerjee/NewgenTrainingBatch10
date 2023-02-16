@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>DOM getElementsByClassName() Method</title>
+    <style>
+            h1 {
+                color: green;
+            }
+            body {
+                text-align: center;
+            }
+            .example {
+                padding: 10px;
+                margin: auto;
+                margin-top: 10px;
+                border: 1px solid black;
+                width: 300px;
+            }
+    </style>
+</head>
+ 
+<body>
+    <h1>Newgen Technologies</h1>
+    <h2>DOM getElementsByClassName() Method</h2>
+    <div>
+    <h4 class="example">Induction Training</h4>
+
+    <h4 class="yellowBorderexample">Newgen Software</h4>
+
+    <h4 class="greenBorderexample">Uday Banerjee</h4>
+
+    <h4 class="example">Innovative Technology Solutions</h4>
+    </div>
+
+
+    <script>
+
+      var gbexample=document.getElementsByClassName('greenBorderexample');
+
+      var ybexample=document.getElementsByClassName('yellowBorderexample');
+
+      gbexample[0].style.border="10px solid green";      
+
+      ybexample[0].style.border="10px solid yellow";
+
+    </script>
+
+</body>
+</html>                

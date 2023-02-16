@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>DOM getElementsByTagName() Method</title>
+    </head>
+    <body style = "text-align: center;">
+
+        <h1 style = "color: green;">
+            Newgen Software
+        </h1>
+          
+        <h2>
+            DOM getElementsByTagName() 
+        </h2>
+          
+        <p>
+           A computer science training for beginners.
+
+        </p>
+
+        <p>
+           A computer science training for intermediates.
+
+        </p>
+        <p>
+           Conducted By: Uday Banerjee, Codeit Coding Academy, Saharanpur
+
+        </p>
+        <p>
+           Organiser: Innovative Technology Solutions, Gurugram
+
+        </p>
+         <p>
+          There are 26 candidates from all across India
+
+        </p>
+        <p>
+           I like to call it a Rainbow batch
+
+        </p>
+  
+        <button onclick="set()">Try it</button>
+  </body>
+        
+      <script>
+       
+        function set() 
+        {
+          //Collection of all the tags with the given name
+          //Collection (Array)
+          //para over here acts like an array that contains reference to all the p tags in the document
+
+          var para = document.getElementsByTagName("p");
+          
+          //para.length = 6
+          //ctr = 0
+          //0 -> Green
+          //1 -> Red (because ctr % 2 is not equal to zero)
+          //This runs to the other p as well
+
+          for(var ctr=0; ctr<para.length; ctr++)
+          {
+           if(ctr == 0 || ctr % 2 == 0)
+           {
+            para[ctr].style.background = "green";
+            para[ctr].style.color = "white";
+           }
+           else
+           {
+            para[ctr].style.background = "red";
+            para[ctr].style.color = "white";
+           }
+          }
+
+        }
+
+      </script>
+  
+  
+</html>
