@@ -1,0 +1,29 @@
+<html>
+     <head>
+
+     </head>
+     <body>
+          <input type="text" id="txtuser" onkeyup="checkNan()"/>
+          <p id="ermsg">
+
+          </p>
+     </body>
+     <script>
+           function checkNan()
+           {
+              errpara = document.getElementById("ermsg")
+              var val = document.getElementById("txtuser").value;
+ 
+              if(isNaN(val))
+              {
+                 errpara.innerText="Only digits allowed";
+                 errpara.style.color="red";
+              }
+              else
+              {
+                  errpara.innerText="";
+                
+              }
+           }
+     </script>
+</html>
