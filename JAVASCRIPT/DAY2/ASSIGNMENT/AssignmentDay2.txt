@@ -1,0 +1,14 @@
+Q1. Print the elements of the array with a break example:
+1 Uday
+2 Aditi
+3 Ira
+....
+and so on
+
+Q2. If this is done try to display the data inside a table
+with following headings
+SNo  StudentName
+
+
+Q3. If Q3 is done, add a text box in the page to accept the SNo from the user,
+the details only for that SNo should be displayed inside the table
