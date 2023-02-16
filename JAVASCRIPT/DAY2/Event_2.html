@@ -1,0 +1,35 @@
+<html>
+   <head>   
+     
+   </head>
+   
+   <body>
+      <p onmouseover="over()" onmouseleave="leave()">Bring your mouse inside the division to see the result:</p>        
+     
+      <div>
+         <h2> This is inside the division </h2>
+      </div>  
+       
+   </body>
+
+   <script type = "text/javascript">
+       
+            function over() 
+            {
+               //replace this code to change the text of the paragraph rather than document.write
+               //document.write ("Mouse Over");
+               var p1 = document.getElementsByTagName("p");
+               p1[0].innerHTML="<B>Mouse Over</B>";
+            }            
+            
+            function leave() 
+            {
+               //replace this code to change the text of the paragraph rather than document.write
+               //document.write ("Mouse Leave");
+               var p1 = document.getElementsByTagName("p");
+               p1[0].innerHTML="<B>Mouse Leave</B>";
+            }           
+       
+   </script>     
+ 
+</html>

@@ -1,0 +1,29 @@
+<html>
+<body>
+
+<p id="demo">
+
+</p>
+
+<script>
+let text;
+const today = new Date();
+
+const someday = new Date();
+
+someday.setFullYear(2019);
+
+if (someday > today)
+ {
+  text = "Today is before the given date";
+} 
+else 
+{
+  text = "Today is after the given";
+}
+
+document.getElementById("demo").innerHTML = text;
+</script>
+
+</body>
+</html>

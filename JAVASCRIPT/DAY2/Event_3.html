@@ -1,0 +1,34 @@
+<html>  
+<head> Javascript Events</head>  
+<body>  
+<h2> Enter something here</h2>  
+
+<input type="text" id="input1" onkeydown="keydownmethod()"/> 
+<input type="text" id="input2" onkeydown="keydownmethod()"/> 
+<input type="text" id="input3" onkeydown="keydownmethod()"/> 
+ 
+<p id="textlength">
+
+</p>
+
+<script>  
+ 
+    function keydownmethod()  
+    {  
+        
+        var txt = document.getElementById("input1");
+        txt.style.textTransform = "uppercase";   
+        
+        var txt = document.getElementById("input2");
+        txt.style.textTransform = "lowercase";
+
+        var txt = document.getElementById("input3");
+        txt.style.textTransform = "capitalize";        
+
+     
+
+    }  
+  
+</script>  
+</body>  
+</html>  
