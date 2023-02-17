@@ -1,0 +1,33 @@
+<html>
+ <head>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+ </head>
+ <body>
+       <input type="text" id ="number"/>
+
+       <button onclick="generateTable()"> Generate </button>
+
+       <table id = "numerictable" style="display:none">
+
+       </table>
+ </body>
+ <script>
+        
+        function generateTable()
+        {
+            var num = Number($("#number").val());
+            var tbl;
+
+            for(var i=1; i<=10; i++)
+            {
+              tbl+="<tr><td>"+ num + " X " + i + "=" + num*i +"</td></tr>";
+            }
+           
+            $("#numerictable").html(tbl);
+            
+            $("#numerictable").fadeToggle(1000);
+        }
+
+ </script>
+
+</html>
