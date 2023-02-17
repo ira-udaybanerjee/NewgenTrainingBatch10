@@ -1,0 +1,26 @@
+<html>  
+<head>  
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+
+</head>  
+<body>  
+<p>See the fadeToggle() method example with different parameters.</p>  
+
+<button onclick="fadetoggle()">Click to fade Toggle boxes</button><br><br>  
+
+<div id="div1" style="width:80px;height:80px;background-color:red;"></div>  <br/>
+<div id="div2" style="width:80px;height:80px;background-color:green;"></div> <br/>
+<div id="div3" style="width:80px;height:80px;background-color:blue;"></div> 
+ 
+</body>  
+
+<script>  
+  function fadetoggle()
+  {  
+        $("#div1").fadeToggle();  
+        $("#div2").fadeToggle("slow");  
+        $("#div3").fadeToggle(3000);  
+  }
+</script>  
+
+</html>   

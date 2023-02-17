@@ -1,0 +1,28 @@
+<html>  
+<head>  
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+<script>   
+ function slidedown()
+   {  
+        $("#panel").slideDown("slow");  
+    }
+</script>  
+ <style>   
+#panel, #flip {  
+    padding: 5px;  
+    text-align: center;  
+    background-color: red;  
+    border: solid 1px blue;  
+}  
+#panel {  
+    padding: 50px;  
+    display: none;  
+}  
+</style>  
+</head>  
+<body>  
+<div id="flip" onclick="slidedown()">Click to slide down panel</div>  
+<div id="panel">Hello javatpoint.com!   
+It is the best tutorial website to learn jQuery and other languages.</div>  
+</body>  
+</html>  
