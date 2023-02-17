@@ -40,18 +40,16 @@
                 </tr>
                 <tr>
                   <td><b>E Mail:</b> </td> <td> <input type="text" id="txtemail" name="email" required/> </td>
-                </tr>
-
-           
+                </tr>          
               
                 <tr>
                   <td><b>Gender:</b> </td> 
                   <td>
                      <fieldset id="radiogroup1">
-                       <input type="radio" id="radmale" value="Male" name="radiogroup1"/>
+                       <input type="radio" id="radmale" value="Male" name="gender"/>
                        <label for = "radmale">Male</label> <br/>
 
-                       <input type="radio" id="radfemale" value="Female" name="radiogroup1"/>
+                       <input type="radio" id="radfemale" value="Female" name="gender"/>
                        <label for = "radfemale">Female</label>
                      </fieldset>
                   </td>
@@ -61,6 +59,7 @@
                   <td><b>Occupation:</b> </td> 
                   <td> 
                       <select id="Occupation" name="occupation"> 
+                         <option value="Select">--Select--</option>
                          <option value="Private Employee">Private Employee</option>
                          <option value="Government Employee">Government Employee</option>
                          <option value="Self Employed">Self Employed</option>
@@ -101,7 +100,7 @@
   </body>
   <script type="text/javascript">
     
-    $("#txtusername").blur(function(){if ($(this).val()=="") alert("Please enter your user name");});
+    //$("#txtusername").blur(function(){if ($(this).val()=="") alert("Please enter your user name");});
 
 
    // $("$txtfirstname").blur(function(){if($(this).val()=="") $(this).css({"background-color":"red","text-color":"white"});
@@ -111,6 +110,10 @@
        let username = $("#txtusername").val();
        let password = $("#txtpass").val();
        let confpass = $("#txtconfpass").val();
+       let occu = $("#Occupation option:selected");
+       let occuval = occu.val();
+       let occtext = occu.text();
+
        let malechecked = $("#radmale").is(":checked");
        let femalechecked = $("radfemale").is(":checked");
 
@@ -120,7 +123,9 @@
        let password = document.getElementById("txtpass").value;
        let confpass = document.getElementById("txtconfpass").value;
        let malechecked = document.getElementById("radmale").checked;
-       let femalechecked = document.getElementById("radfemale").checked;*/
+       let femalechecked = document.getElementById("radfemale").checked;
+
+       */
        
        if(password != confpass)
        {
@@ -137,12 +142,16 @@
           alert("Password must be at least 8 characters long");
           return false;
        }
+       else if(occuval == "Select")
+       {
+          alert(occtext + "is not a valid selection. Please select an Occupation");
+          return false;
+       }
        else if(malechecked == false && femalechecked == false)
        {
           alert("Please select a Gender");
           return false;
-       }
-       
+       }      
        
     
 
