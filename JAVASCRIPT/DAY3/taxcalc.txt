@@ -1,12 +1,14 @@
-ResidentName
+ResidentName 
 Father or Husband Name
-HouseNo
-WardNo
-Covered Area
-Road Width 
-Water Line
-Sewer Line
-Type of Property (Resi / Non Resi)
+HouseNo (text box)
+WardNo (Drop Down)
+Covered Area (text box) Can not be less than 10
+Road Width (Drop Down)
+Water Line (Radio Button)
+Sewer Line (Radio Button)
+Type of Property (Resi / Non Resi) (Radio Button)
+
+All the information needs to be provided
 
 
 arv = coveredarea * 0.80 * 0.25 * 12 * 1
@@ -26,4 +28,5 @@ NR = 5
 Once this is done add another button to calculate tax:
 
 if waterline selected then (arv*0.4) + (arv*0.3)
+
 if sewer selected then (arv*0.4) + (arv*0.3) + (arv*0.15)
