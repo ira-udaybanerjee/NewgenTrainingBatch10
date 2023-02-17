@@ -1,0 +1,38 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+</head>
+<body>
+
+<h2>JavaScript Strings</h2>
+
+<p>The indexOf() method returns the position of the first occurrence of a specified value in a string.</p>
+
+<p id="demo"></p>
+
+<script>
+
+var str = "Hello world, welcome to the universe. welcome all welcome.";
+
+//document.getElementById("demo").innerHTML = str.indexOf("welcome");
+
+var inp = prompt("Please enter a word");
+
+var position = str.indexOf(inp);
+
+if(position > -1)
+{
+   var out = inp + " falls at position " + position;
+
+   $("#demo").html(out);   
+}
+else
+{
+   $("#demo").html("The existing word does not exist in the string");
+} 
+
+
+</script>
+
+</body>
+</html>

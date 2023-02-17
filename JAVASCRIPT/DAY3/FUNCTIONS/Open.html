@@ -1,0 +1,29 @@
+<html>
+<body>
+
+<p>Click the button to open a new browser window.</p>
+
+<button onclick="myFunction()">Open</button>
+
+<script>
+function myFunction() 
+{
+  var url = prompt("Enter the site name"); 
+  
+  var newtab = prompt("Do you want to open the url in a new tab? (Y/N)");
+  
+  url = "https://www."+url;
+
+  if(newtab.toLowerCase()=="n")
+  {
+    window.open(url,"_self");
+  }
+  else
+  {
+     window.open(url);
+  }
+}
+</script>
+
+</body>
+</html>

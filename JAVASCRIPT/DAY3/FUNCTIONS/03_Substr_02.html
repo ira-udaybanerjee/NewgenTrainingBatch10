@@ -1,0 +1,28 @@
+<html>
+
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+</head>
+
+<body>
+
+<h2>JavaScript Strings</h2>
+
+<p>The substr() method extracts parts of a string.</p>
+
+<p id="demo"></p>
+
+<script>
+var fname = prompt("Please enter your first name");
+var lname = prompt("Please enter your last name");
+
+var init = fname.substr(0,1);
+
+var result = "Hello " + init + ". " + lname;
+
+$("#demo").html(result);
+
+</script>
+
+</body>
+</html>

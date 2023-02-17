@@ -1,0 +1,29 @@
+<html>
+
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+</head>
+
+<body>
+
+<h2>JavaScript Strings</h2>
+
+<p>The substr() method extracts parts of a string.</p>
+
+<p id="demo"></p>
+
+<script>
+var str = "Hello world!";
+
+//document.getElementById("demo").innerHTML = str.substr(1, 4);
+
+var subs = str.substr(1, 1);
+
+var out = "<B>Given substring is: </B>" + subs;
+
+$("#demo").html(out);
+
+</script>
+
+</body>
+</html>
