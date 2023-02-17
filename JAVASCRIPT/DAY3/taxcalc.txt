@@ -1,3 +1,14 @@
+ResidentName
+Father or Husband Name
+HouseNo
+WardNo
+Covered Area
+Road Width 
+Water Line
+Sewer Line
+Type of Property (Resi / Non Resi)
+
+
 arv = coveredarea * 0.80 * 0.25 * 12 * 1
 
 third value depends on road width selected:
