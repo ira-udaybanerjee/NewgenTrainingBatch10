@@ -1,0 +1,151 @@
+<html>
+  <head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="Style.css"/>
+    <link rel="stylesheet" href="Style2.css"/>
+    
+    <style>
+     
+       select {
+         width: 300px;
+         height:40px; 
+         border: 1px dotted black;
+         border-radius: 4px;  
+       }
+
+     input[type=password] 
+     {
+       border: 2px solid blue;
+       border-radius: 4px;
+       font-family:Verdana;
+       font-size:14;
+       height:40px;
+       width:300px;
+     }
+
+    </style>
+
+  </head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+  <body>
+    
+     <div>
+         <form name = "Registration" action="04_SuccessPage.html" onsubmit="return validateData()" method="GET">
+             <table>
+                <tr>
+                  <td><b>First Name:</b> </td> <td> <input type="text" id="txtfirstname" name="firstname" required /> </td>
+                </tr>
+                <tr>
+                  <td><b>Last Name:</b> </td> <td> <input type="text" id="txtlastname" name="lastname" required/> </td>
+                </tr>
+                <tr>
+                  <td><b>E Mail:</b> </td> <td> <input type="text" id="txtemail" name="email" required/> </td>
+                </tr>
+
+           
+              
+                <tr>
+                  <td><b>Gender:</b> </td> 
+                  <td>
+                     <fieldset id="radiogroup1">
+                       <input type="radio" id="radmale" value="Male" name="radiogroup1"/>
+                       <label for = "radmale">Male</label> <br/>
+
+                       <input type="radio" id="radfemale" value="Female" name="radiogroup1"/>
+                       <label for = "radfemale">Female</label>
+                     </fieldset>
+                  </td>
+
+                </tr>
+                <tr>
+                  <td><b>Occupation:</b> </td> 
+                  <td> 
+                      <select id="Occupation" name="occupation"> 
+                         <option value="Private Employee">Private Employee</option>
+                         <option value="Government Employee">Government Employee</option>
+                         <option value="Self Employed">Self Employed</option>
+                         <option value="Professional">Professional</option>
+                      </select>
+                  </td>
+                </tr>
+                <tr>
+                   <td><b>Phone No:</b> </td> <td> <input type="text" id="txtphone" name="phone" required/> </td>
+                </tr>
+                <tr>
+                   <td><b>User Name:</b> </td> <td> <input type="text" id="txtusername" name="username" required/> </td>
+                </tr>
+                <tr>
+                   <td><b>Password:</b> </td> <td> <input type="password" id="txtpass" required/> </td>
+                </tr>
+              
+                <tr>
+                   <td><b>Confirm Password:</b></td> <td><input type="password" id="txtconfpass" required/></td>
+                </tr>
+                <tr>
+                   <td><b>Location:</b> </td> <td> <input type="text" id="txtlocation" name="location" required/> </td>
+                </tr>
+                <tr>
+                   <td><b>Feedback:</b> </td>  <td> <textarea id="txtfeedback" rows="10" columns="50"> </textarea> </td>
+                </tr>
+                <tr align="right">
+                   <td colspan="2"><input type="Submit" value="Submit"/></td>
+                </tr>
+             </table>
+         </form>
+       
+     </div>
+     <hr/>
+     <div>
+     
+     </div>
+  </body>
+  <script type="text/javascript">
+    
+    $("#txtusername").blur(function(){if ($(this).val()=="") alert("Please enter your user name");});
+
+
+   // $("$txtfirstname").blur(function(){if($(this).val()=="") $(this).css({"background-color":"red","text-color":"white"});
+
+    function validateData()
+     {
+       let username = $("#txtusername").val();
+       let password = $("#txtpass").val();
+       let confpass = $("#txtconfpass").val();
+       let malechecked = $("#radmale").is(":checked");
+       let femalechecked = $("radfemale").is(":checked");
+
+        /*
+
+       let username = document.getElementById("txtusername").value;
+       let password = document.getElementById("txtpass").value;
+       let confpass = document.getElementById("txtconfpass").value;
+       let malechecked = document.getElementById("radmale").checked;
+       let femalechecked = document.getElementById("radfemale").checked;*/
+       
+       if(password != confpass)
+       {
+          alert("Password and Confirm Password do not match");
+          return false;
+       }
+       else if(username.length < 8)
+       {
+          alert("User name must be at least 8 characters long");
+          return false;
+       }
+       else if(password.length < 8)
+       {
+          alert("Password must be at least 8 characters long");
+          return false;
+       }
+       else if(malechecked == false && femalechecked == false)
+       {
+          alert("Please select a Gender");
+          return false;
+       }
+       
+       
+    
+
+     }
+  </script>
+</html>

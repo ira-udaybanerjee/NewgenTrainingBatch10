@@ -1,0 +1,39 @@
+<html>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+
+   <body bgcolor="aqua" onload="loadValues()">
+      <b>Thanks for registering</b>
+      <table border=2>
+           <tr> 
+              <th colspan=2>User Details</th>
+           </tr>
+           <tr>
+               <th> Customer Name </th>
+               <td id="fname"> </td>
+           <tr>
+              <th>Occupation</th>
+              <td id="occ"></td>
+           </tr>
+           
+      </table>
+
+
+      
+   </body>
+   
+   <script type="text/javascript">
+       function loadValues()
+       {
+          const querystring = window.location.search;
+          const urlparams = new URLSearchParams(querystring);
+
+          const fname = urlparams.get('firstname');
+          const lname = urlparams.get('lastname');
+          const occu = urlparams.get('occupation');
+
+          $("#fname").html(fname+" "+lname);
+          $("#occ").html(occu);
+          
+       }
+   </script>
+</html>
