@@ -1,0 +1,34 @@
+1. create a table Customer with following fields:
+
+a. CustomerId Make this a primary key, 
+b. CustomerName maximum length 50,
+c. HomeAddress maximum length 500,
+d. City maximum length 30,
+e. MobileNo 
+
+2. Insert 10 new customers with proper values. Don't use junk values
+
+
+3. create a table Salesperson with following fields
+
+a. SalespersonId should be a numeric value. Not more than 200 salesperson would be appointed. Make it primary key,
+b. SalespersonName maximum length 50,
+c. DateOfJoining time not required
+d. TeamLeaderCode should be a numeric value. The value can never be more than 200
+
+4. Insert 5 new salesperson. Don't insert junk values
+
+5. Create a Product Table with following fields:
+a. ProductId primary key,
+b. ProductName maximum length 50,
+c. StdPrice 
+d. OpeningStock
+
+6. Insert 8 new Products.
+
+7. Select the salesperson with the most experience
+8. Select the product with 3rd highest price
+9. Select the product with lowest stock
+10. Select a proper list of cities from where our customers belong to 
+11. Select the average price of products
+12. Select the minimum price of products

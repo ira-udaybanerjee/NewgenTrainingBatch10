@@ -1,0 +1,122 @@
+create table Customer
+(
+CustomerId int primary key,
+CustomerName varchar(50) not null,
+[Address] varchar(100),
+City varchar(200),
+MobileNo varchar(10)
+)
+
+--The integrity maintained by primary key is known as Entity Integrity
+create table Salesperson
+(
+SalespersonId int primary key,
+SalespersonName varchar(50) not null,
+DateOfJoining date not null,
+TeamLeaderCode int
+)
+
+--Check maintains domain integrity
+create table Product
+(
+ProductId int primary key,
+ProductName varchar(50) not null,
+StdPrice smallmoney check (StdPrice > 0) not null,
+OpeningStock numeric(10,2) check (OpeningStock >= 0) not null
+)
+
+
+--One to Many Relationship between Customer and Orders
+--One to Many Relationship between Salesperson and Orders
+create table Orders
+(
+OrderId int identity primary key,
+OrderDateTime datetime not null,
+--Customer Id is a foreign key in this table
+--Foreign key is used to establish a relationship between two tables
+--Foreign key maintains referential integrity
+CustomerId int references Customer(CustomerId) not null,
+SalespersonId int references Salesperson(SalespersonId) not null
+)
+
+
+
+create table OrderDetails
+(
+OrderId int references Orders(OrderId),
+ProductId int references Product(ProductId),
+QtySold numeric(10,2) not null check (QtySold > 0),
+SalePrice smallmoney not null check (SalePrice > 0)
+)
+
+
+
+
+
+insert into Customer 
+values (1,'Uday','Court Road','Saharanpur','9634262077')
+
+insert into Customer 
+values (2,'Dharmesh','GMS Road','Dehradun','9696969696')
+
+insert into Customer
+values (3,'Sanjeev', 'Roorkee Road', 'Meerut', '9797979797')
+
+
+
+
+
+insert into Salesperson 
+values (1, 'Rajesh', '2018-11-01',null)
+
+insert into Salesperson
+values (2, 'Rakesh', '2019-01-01', 1)
+
+insert into Salesperson
+values (3, 'Manu', '2019-01-15',1)
+
+insert into Salesperson
+values (4, 'Apurv','2019-02-01',2)
+
+
+
+
+
+insert into Product
+values (1, 'Vivo', 18000, 10)
+
+insert into Product
+values (2, 'Oppo', 17000, 10)
+
+insert into Product
+values (3, 'Apple', 80000, 10)
+
+insert into Product
+values (4, 'Realme', 16000, 10)
+
+
+insert into Orders
+values ('2020-08-05', 2, 1)
+
+insert into OrderDetails
+values (1, 2, 2, 16600), (1, 1, 4, 17000)
+
+insert into Orders
+values ('2020-09-01', 1, 3)
+
+insert into OrderDetails
+values (2, 3, 1, 80000)
+
+insert into Orders
+values ('2020-09-30', 3, 2)
+
+insert into OrderDetails
+values (3, 1, 2, 17300), (3, 2, 1, 17000), (3, 4, 2, 15500)
+
+
+select * from Orders 
+
+select * from Customer 
+
+insert Orders
+values(getdate(),5, 1)

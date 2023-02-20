@@ -1,0 +1,27 @@
+select * from product
+
+create table ProductCategory
+(
+CategoryId int primary key,
+CategoryName varchar(50) not null
+)
+
+alter table Product
+add CategoryId int references ProductCategory(CategoryId) 
+
+
+insert ProductCategory
+values (1, 'Budget')
+
+insert ProductCategory 
+values (2, 'Premium')
+
+
+UPDATE Product
+SET CategoryId = 1
+WHERE ProductId IN(1,2) 
+
+UPDATE Product
+SET categoryid = 2
+where ProductId = 3
+
