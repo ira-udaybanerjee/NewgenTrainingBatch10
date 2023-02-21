@@ -17,24 +17,39 @@ DCL (Data Control Language) works on permissions - Grant, Revoke, Deny
 
 create table Customer
 (
-CustomerId int primary key, --Primary key is a type of constraint (maintain entity integrity)
+CustomerId char(5) primary key, --Primary key is a type of constraint (maintain entity integrity)
 CustomerName varchar(50) not null,
 [Address] varchar(100),
 City varchar(200),
 MobileNo varchar(10)
 )
 
+select * from customer 
 
+alter table Customer
+alter column MobileNo char(10)
+
+alter table Customer
+add AdditionalInfo varchar(200)
+
+sp_rename 'Customer.AdditionalInfo', 'Remarks'
+
+sp_rename 'Customer.Remarks', 'AdditionalInfo'
+
+sp_rename 'Customer', 'CustomerInfo'
 
 --The integrity maintained by primary key is known as Entity Integrity
 
 create table Salesperson
 (
-SalespersonId int primary key,
+SalespersonId char(5) primary key,
 SalespersonName varchar(50) not null,
 DateOfJoining date not null,
 TeamLeaderCode int
 )
+
+alter table Salesperson
+alter column TeamLeaderCode char(5)
 
 
 select * from Salesperson 
@@ -44,11 +59,15 @@ select * from Salesperson
 
 create table Product
 (
-ProductId int primary key,
+ProductId char(5) primary key,
 ProductName varchar(50) not null,
 StdPrice smallmoney check (StdPrice > 0) not null,
 OpeningStock numeric(10,2) check (OpeningStock >= 0) not null
 )
+
+alter table Product
+add constraint chk_stdprice check (stdprice > 0)
+
 
 
 select * from Salesperson 
@@ -60,20 +79,23 @@ select * from product
 
 create table Orders
 (
-OrderId int identity primary key,
+OrderId char(5) primary key,
 OrderDateTime datetime not null,
 --Customer Id is a foreign key in this table
 --Foreign key is used to establish a relationship between two tables
 --Foreign key maintains referential integrity
-CustomerId int references Customer(CustomerId) not null, --foreign key in orders table --primary key in customer table
-SalespersonId int references Salesperson(SalespersonId) not null --foreign key in orders --primary key in salesperson table
+CustomerId char(5) references Customer(CustomerId) not null, --foreign key in orders table --primary key in customer table
+SalespersonId char(5) references Salesperson(SalespersonId) not null --foreign key in orders --primary key in salesperson table
 )
 
 
-SELECT * FROM Orders 
+SELECT * FROM Salesperson 
 
 insert into Orders
-values ('2022-07-01', 2, 4)
+values ('00001','2022-07-01', 'C0002', 'SP004')
+
+
+select * from orders 
 
 
 
@@ -84,56 +106,142 @@ select * from Customer
 
 create table OrderDetails
 (
-OrderId int references Orders(OrderId),
-ProductId int references Product(ProductId),
+OrderId char(5) references Orders(OrderId) not null,
+ProductId char(5) references Product(ProductId) not null,
 QtySold numeric(10,2) not null check (QtySold > 0),
 SalePrice smallmoney not null check (SalePrice > 0)
 )
 
-select * from OrderDetails 
+
+insert OrderDetails 
+values ('00001','P0001',3,1000), ('00001','P0002',2,2000)
+
+alter table orderdetails
+add constraint pk_Ord_Prod primary key(orderid, productid)
+
+insert Orders
+values ('00002','2023-02-21','C0002','SP003')
+
+insert OrderDetails 
+values ('00002','P0002',3,5000),('00002','P0003',4,4500)
 
 
+select * from Product 
+
+alter table product
+add constraint unq_ProductName unique (ProductName)
+
+insert product
+values('P0005','Apple','90000',10)
+
+
+
+
+
+select * from Orders 
+
+
+--OrderId, OrderDateTime, CustomerId, CustomerName, salespersonid, salespersonname
+
+select orderid, orderdatetime, orders.customerid, customername, orders.SalespersonId, SalespersonName 
+from orders join Customer 
+on orders.CustomerId = customer.CustomerId 
+join Salesperson 
+on orders.SalespersonId = Salesperson.SalespersonId 
+
+
+select customer.customerid, customername, city, orderid, orderdatetime,
+orders.SalespersonId, salespersonname from customer 
+cross join orders cross join Salesperson 
+where customer.customerid = orders.customerid and orders.SalespersonId = Salesperson.SalespersonId 
+
+
+create table ProductCategory
+(
+CategoryId char(5) primary key,
+CategoryName varchar(20)
+)
+
+insert ProductCategory 
+values ('CT001','Budget'),('CT002','Premium'),('CT003','Regular')
+
+alter table product
+add CategoryId char(5) references ProductCategory(CategoryId)
+
+select * from product
+
+update product
+set categoryid = 'CT003'
+where ProductId = 'P0001'
+
+update product
+set categoryid = 'CT002'
+where productid = 'P0003'
+
+select * from Product 
+
+--ProductId, ProductName, StdPrice, CategoryName
+
+select product.productid, productname, stdprice, categoryname
+from product full join productcategory
+on product.categoryid = ProductCategory.CategoryId 
+
+select * from salesperson 
+
+--SalespersonId, SalespersonName, DateOfJoining,
+--Team Leader Name
+
+--SELF JOIN
+SELECT SP1.SalespersonId, SP1.SalespersonName,
+SP1.DateOfJoining, SP2.SalespersonName as [Team Leader Name]
+FROM Salesperson SP1 LEFT JOIN Salesperson SP2
+ON SP1.TeamLeaderCode = SP2.SalespersonId
+
+
+
+
+select * from orderdetails 
 
 insert into Customer 
-values (1,'Uday','Court Road','Saharanpur','9634262077')
+values ('C0001','Uday','Court Road','Saharanpur','9634262077')
 
 insert into Customer 
-values (2,'Dharmesh','GMS Road','Dehradun','9696969696')
+values ('C0002','Dharmesh','GMS Road','Dehradun','9696969696')
 
 insert into Customer
-values (3,'Sanjeev', 'Roorkee Road', 'Meerut', '9797979797')
+values ('C0003','Sanjeev', 'Roorkee Road', 'Meerut', '9797979797')
 
 
 
 
 
 insert into Salesperson 
-values (1, 'Rajesh', '2018-11-01',null)
+values ('SP001', 'Rajesh', '2018-11-01',null)
 
 insert into Salesperson
-values (2, 'Rakesh', '2019-01-01', 1)
+values ('SP002', 'Rakesh', '2019-01-01', 'SP001')
 
 insert into Salesperson
-values (3, 'Manu', '2019-01-15',1)
+values ('SP003', 'Manu', '2019-01-15','SP001')
 
 insert into Salesperson
-values (4, 'Apurv','2019-02-01',2)
+values ('SP004', 'Apurv','2019-02-01','SP002')
 
 
 
 
 
 insert into Product
-values (1, 'Vivo', 18000, 10)
+values ('P0001', 'Vivo', 18000, 10)
 
 insert into Product
-values (2, 'Oppo', 17000, 10)
+values ('P0002', 'Oppo', 17000, 10)
 
 insert into Product
-values (3, 'Apple', 80000, 10)
+values ('P0003', 'Apple', 80000, 10)
 
 insert into Product
-values (4, 'Realme', 16000, 10)
+values ('P0004', 'Realme', 16000, 10)
 
 
 insert into Orders
