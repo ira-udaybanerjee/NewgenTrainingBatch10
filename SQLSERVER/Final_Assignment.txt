@@ -1,0 +1,15 @@
+1. Create table named as Person with following fields:
+      PersonId char(5)
+      PersonName varchar(50)
+      AdharNo char(12)
+      PAN char(10)
+      DateOfBirth date
+
+2. Create a function that generates the new person id on the bases of the last
+   Person id:
+   Example: If the last PersonId was P0009, it should generate P0010.
+
+3. Create a trigger that restricts us to insert more than 10 rows in Person table
+4. Create a trigger that restricts us to delete a row from the table if there is only one    row remaining in the Person Table
+
+
